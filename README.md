@@ -162,7 +162,6 @@ The Multiplier approximates the product of two inputs using the algebraic identi
 
 $$
 x \cdot y = \frac{(x + y)^2 - (x - y)^2}{4}
-
 $$
 
 The implementation reflects this structure directly:
