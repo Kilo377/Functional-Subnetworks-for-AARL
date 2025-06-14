@@ -65,7 +65,6 @@ To implement this without training, we exploit a known algebraic identity:
 
 $$
 x \cdot y = \frac{(x + y)^2 - (x - y)^2}{4}
-
 $$
 
 This allows us to reduce multiplication to a combination of addition, subtraction, and squaring—each of which can be implemented in a neural circuit.
@@ -81,11 +80,8 @@ The network structure comprises:
 ach nonlinear transformation (square) is realized by decoding the square function over the ensemble’s response space:
 
 $$
-
 z_i(t) = \sum_j d_j \cdot a_j(t)
-
 \text{where } d_j \text{ approximates } z^2 \text{ over the neuron's tuning curve}
-
 $$
 
 This approach leverages the fact that leaky integrate-and-fire (LIF) neurons exhibit nonlinear responses to current inputs, enabling them to represent nonlinear functions such as squares through appropriate decoders.
@@ -104,7 +100,6 @@ This is achieved using a **finite difference method**, where the derivative is a
 
 $$
 \frac{dx}{dt} \approx \frac{x(t) - x(t - \Delta t)}{\Delta t}
-
 $$
 
 In the neural implementation, the delay is introduced via a **low-pass filter** with time constant $\tau$, which approximates the value of the signal at a slightly earlier time:
